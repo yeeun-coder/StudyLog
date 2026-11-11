@@ -1,5 +1,6 @@
 # StudyLog
 JSP 프로젝트 (Eclipse STS)
+* 보고서 제출일 : 2025년 12월 11일
 
 https://github.com/user-attachments/assets/ad10b739-4f45-4f7d-aa39-4a0212a1727d
   
