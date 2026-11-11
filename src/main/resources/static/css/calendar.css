@@ -1,0 +1,73 @@
+/* --- 달력 정렬 핵심 (붙여넣기/덮어쓰기) --- */
+
+.calendar-grid {
+    display: grid; /* 이미 사용 중이라면 !important 불필요 */
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    justify-items: center;           /* 각 그리드 셀의 내용(자식)을 가로 중앙으로 정렬 */
+    align-items: center;             /* 각 셀의 내용(자식)을 세로 중앙으로 정렬 (안정성) */
+    box-sizing: border-box;
+}
+
+/* 요일(헤더)과 빈칸, 날짜 셀을 동일한 정렬 컨텍스트로 만듦 */
+.calendar-grid > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 날짜 원(circle) 스타일 — flex 안에서 중앙 정렬 (line-height 제거) */
+.calendar-day {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #f1f1f1;
+    font-weight: bold;
+    position: relative;
+
+    display: flex;         /* !important 지양 — CSS 순서를 조정해서 적용하세요 */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: normal;   /* flex 사용 시 line-height는 normal로 둠 */
+    box-sizing: border-box;
+    
+    padding: 8px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+/* 기록된 날짜 색상 */
+.calendar-day.recorded {
+    background: #198754;
+    color: white;
+}
+
+/* 헤더 버튼 (변경 없음) */
+.header-btn {
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.calendar-day.today {
+    background: #fff8e1;
+    color: #b58900;
+    border: 2px solid #f2c94c;
+    box-shadow: 0 0 10px rgba(242, 201, 76, 0.6);
+    font-weight: bold;
+}
+
+.calendar-day.level-1 {
+    background: rgba(30, 136, 229, 0.25);
+}
+.calendar-day.level-2 {
+    background: rgba(30, 136, 229, 0.55);
+}
+.calendar-day.level-3 {
+    background: rgba(30, 136, 229, 0.85);
+    color: white;
+}
+
+
+
